@@ -22,10 +22,11 @@ class Dokan_S3_Product_Controller extends WeDevs\Dokan\REST\ProductController {
      *
      * @param WC_Product $product    Product instance
      * @param array      $downloads  Downloads data
+     * @param int        $deprecated Deprecated since 3.0
      * 
      * @return WC_Product
      */
-    protected function save_downloadable_files( $product, $downloads ) {
+    protected function save_downloadable_files( $product, $downloads, $deprecated = 0 ) {
         $files = [];
         
         foreach ( $downloads as $key => $file ) {
